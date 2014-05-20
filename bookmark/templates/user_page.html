@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Django Bookmarks - User: {{ user_name }}</title>
+  </head>
+  <body>
+    <h1>Bookmarks for {{ user_name }}</h1>
+    {% if book_marks %}
+      <ul>
+        {% for bookmark in book_marks %}
+          <li><a href="{{ bookmark.link.url }}">
+            {{ bookmark.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No bookmarks found.</p>
+    {% endif %}
+  </body>
+</html>
+
